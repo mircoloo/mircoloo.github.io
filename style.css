@@ -61,6 +61,14 @@ header p {
     background-color: transparent;
     width: 50%;
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.timeline-container.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* The circles on the timeline */

@@ -7,67 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <h1>{{ title }}</h1>
+                <p>{{ subtitle }}</p>
+            </div>
+        </header>
 
-    <header>
-        <div class="container">
-            <h1>Mirco's Portfolio</h1>
-            <p>On Develop - A Professional Journey</p>
-        </div>
-    </header>
-
-    <div class="timeline">
-        
-        <!-- Timeline Item 1 -->
-        <div class="timeline-container right">
-            <div class="content">
-                <span class="date">Oct 2023 - Dec 2025</span>
-                <h2>Computer Science in AI Master Degree</h2>
-                <span class="role">Università di Padova</span>
-                <p>Graduated at UNIPD as an AI Computer Scientist. Working on Python ...</p>
+        <div class="timeline">
+            <!-- Loading indicator could go here -->
+            <div class="timeline-container" 
+                 v-for="item in timelineEvents" 
+                 :key="item.id" 
+                 :class="item.side">
+                <div class="content">
+                    <span class="date">{{ item.date }}</span>
+                    <h2>{{ item.title }}</h2>
+                    <span class="role">{{ item.role }}</span>
+                    <p>{{ item.description }}</p>
+                </div>
             </div>
         </div>
-
-        <!-- Timeline Item 1 -->
-        <div class="timeline-container left">
-            <div class="content">
-                <span class="date">Sep 2024 - Feb 2025</span>
-                <h2>Erasmus Student</h2>
-                <span class="role">Universidad Autonoma de Barcelona</span>
-                <p>I've taken part in the Erasmus+ project ...</p>
-            </div>
-        </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="timeline-container right">
-            <div class="content">
-                <span class="date">Jan 2023 - Sep 2023</span>
-                <h2>Junior software developer</h2>
-                <span class="role">TC Consulting Group</span>
-                <p>Developer in the Healthcare industries on the Intersystem Objectscript language. Mantained frontend project in HTML, CSS and JS ...</p>
-            </div>
-        </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="timeline-container left">
-            <div class="content">
-                <span class="date">Sep 2019 - Sep 2022</span>
-                <h2>Computer Engineer Bachelor Graduated</h2>
-                <span class="role">Università di Trento</span>
-                <p>Graduated at UNITN as a Computer Engineer...</p>
-            </div>
-        </div>
-
-        <!-- Timeline Item 4 -->
-        <div class="timeline-container right">
-            <div class="content">
-                <span class="date">Sep 2015 - Jul 2019</span>
-                <h2>Electronics technician</h2>
-                <span class="role">ITT Marconi</span>
-                <p>Diplomated from High School ITT Marconi as an Electronics expert ...</p>
-            </div>
-        </div>
-
     </div>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
